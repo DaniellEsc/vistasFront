@@ -1,0 +1,405 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <div class="container text-center">
+            <h2>Ficha de Abordaje</h2>
+            <h4>Grupo familiar</h4>
+            <hr>
+            <p>(se aplica a cada uno de los miembros del hogar abordado que efectivamente serán usuarios)</p>
+        </div>
+
+        <form style="max-width: 700px; margin:0 auto; background-color: #ececec;">
+
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col">
+                        <label>Nombres</label>
+                        <input type="text" class="form-control" placeholder="First name">
+                    </div>
+                    <div class="col">
+                        <label>Apellidos</label>
+                        <input type="text" class="form-control" placeholder="Last name">
+                    </div>
+                </div><br>
+                <div class="col-6">
+                    <label>fecha</label>
+                    <input type="date" class="form-control" placeholder="Last name">
+                </div>
+
+
+            </div>
+
+
+            <h6 class="mt-5">1. Información del contratista</h6>
+            <hr>
+            <div class="container">
+
+                <div class="form-group my-2 ">
+                    <label>Nombre de la Organización contratista:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group my-2 ">
+                    <label>Zona:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group my-2 ">
+                    <label>Distrito:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group my-2 ">
+                    <label>Provicia:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group my-2 ">
+                    <label>Cantón:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group my-2 ">
+                    <label>Parroquia:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+            </div>
+
+            <h6 class="mt-5">2. Datos de identificacíon de la persona en situación de movilidad humana</h6>
+            <hr>
+
+            <div class="container">
+                <div class="form-group my-2">
+                    <label>Documento de indentificación:</label>
+                    <div class="col-8">
+                        <select class="form-select" [(ngModel)]="selectedIdentificacion" name="identidficacion"
+                            required>
+                            <option>Cedula del país de origen o DNI</option>
+                            <option>Cedula ecuatoriana</option>
+                            <option>Pasaporte</option>
+                            <option>Visa Humanitaria</option>
+                            <option>Tarjeta Andina</option>
+                            <option>Partida de nacimiento</option>
+                            <option>Certificado de nacido vivo</option>
+                            <option value="ninguno">Ninguno</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group my-2" *ngIf="selectedIdentificacion !== 'ninguno'">
+                    <label>Nro de Documento:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group my-2">
+                    <label>Nombres:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group my-2">
+                    <label>Apellidos:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group my-2">
+                    <label>Fecha de nacimiento:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group my-2">
+                    <label>País de Origen:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group my-2">
+                    <label>Edad:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <!-- Radio button inicio -->
+                <div class="form-check-inline my-2">
+                    <label class="form-group ">Sexo:</label><br>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="sexo"> Hombre
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="sexo"> Mujer
+                    </label>
+                </div>
+                <!-- Radio button fin -->
+
+                <!-- genero -->
+                <div class="form-group my-2 col-5">
+                    <label>Genero:</label>
+                    <select class="form-select">
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+                        <option>LGBTBQI+</option>
+                    </select>
+                </div>
+                <!-- genero -->
+
+                <div class="form-group my-2 col-5">
+                    <label>Etnia:</label>
+                    <select class="form-select">
+                        <option>Blanco</option>
+                        <option>Afrodecendiente</option>
+                        <option>Mestizo</option>
+                        <option>Indigena</option>
+                        <option>Montubio</option>
+                    </select>
+                </div>
+                <div class="form-group my-2 col-5">
+                    <label>Estado civil:</label>
+                    <select class="form-select">
+                        <option>Soltero</option>
+                        <option>Unión de hecho</option>
+                        <option>Divorciado</option>
+                        <option>Viudo</option>
+                        <option>Casado</option>
+                    </select>
+                </div>
+                <div class="form-group my-2">
+                    <label>Nivel de instrucción:</label>
+                    <div class="col-5">
+                        <select class="form-select">
+                            <option>Ninguno</option>
+                            <option>Jardin de infantes</option>
+                            <option>Educación Básica completa</option>
+                            <option>Secundaria</option>
+                            <option>Educ. Media/Bachillerato</option>
+                            <option>Superior</option>
+                            <option>Post grado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>Redes sociales:</label>
+                    <textarea class="form-control" rows="2"></textarea>
+
+                </div>
+
+
+            </div>
+
+            <h6 class="mt-5">3. Movilidad Humana</h6>
+            <hr>
+
+            <div class="container">
+
+                <div class="col-6">
+                    <label>Fecha de ingreso al Ecuador:</label>
+                    <input type="date" class="form-control" placeholder="Last name">
+                </div>
+                <div class="form-group my-2">
+                    <label>Hace cuanto tiempo salio de su país de origen(meses):</label>
+                    <input type="text" class="form-control" size="32px" required>
+                </div>
+                <div class="form-group my-2">
+                    <label>Motivo de salida de su país de origen:</label>
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+
+                <div class="form-group my-2 col-5">
+                    <label>Situación de movilidad:</label>
+                    <select class="form-select">
+                        <option>En transito</option>
+                        <option>Permanencia</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <h6 class="mt-5">4. Dirección Domiciliar</h6>
+            <hr>
+
+            <div class="container">
+
+                <div class="form-group my-2 col-5">
+                    <label>Espacio publico(calle, parque, etc):</label>
+                    <select class="form-select">
+                        <option>Albergue</option>
+                        <option>Propia</option>
+                        <option>Arrendada</option>
+                        <option>Prestada</option>
+                    </select>
+                </div>
+
+                <div class="form-group my-2">
+                    <label>Provicia:</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="form-group my-2">
+                    <label>Cantón:</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="form-group my-2">
+                    <label>Parroquia:</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="form-group my-2">
+                    <label>Dirección exacta:</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="form-group my-2">
+                    <label>Teléfono de contacto:</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="form-group my-2">
+                    <label>Email:</label>
+                    <input type="text" class="form-control" required>
+                </div>
+
+            </div>
+
+            <h6 class="mt-5">5. Grupo familiar o grupo de personas abordadas con quienes se encuenrtran en este momento
+            </h6>
+            <hr>
+
+            <div class="container">
+
+                <div class="form-group my-2">
+                    <label>Total de personas del grupo familiar(incluido en representante de
+                        hogar):</label>
+                    <div class="col-3">
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>Cantidad de mujeres:</label>
+                    <div class="col-3">
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>Cantidad de hombres:</label>
+                    <div class="col-3">
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>Cantidad de niños/as menores de 11 años:</label>
+                    <div class="col-3">
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>Cantidad de adolecentes menores entre 12 y 17 años:</label>
+                    <div class="col-3">
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>Cantidad de adultos/as entre 18 y 65 años:</label>
+                    <div class="col-3">
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>Cantidad de adultos/as mayores de 65 años:</label>
+                    <div class="col-3">
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+
+            </div>
+
+            <h6 class="mt-5">4. Situación de vulnerabilidad que podria enfrentar el hogar/grupo</h6>
+            <hr>
+
+            <div class="container">
+
+                <div class="form-group my-2">
+                    <label>NNA separados:</label>
+                    <div class="col-3">
+                        <select class="form-select">
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>NNA no acompañados:</label>
+                    <div class="col-3">
+                        <select class="form-select">
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>Presunata trata de personas:</label>
+                    <div class="col-3">
+                        <select class="form-select">
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>Presunto trafico de imigrantes:</label>
+                    <div class="col-3">
+                        <select class="form-select">
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>NNA trabajo infantil:</label>
+                    <div class="col-3">
+                        <select class="form-select">
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>NNA y sus familias en situación de mendicidad:</label>
+                    <div class="col-3">
+                        <select class="form-select">
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>Personas adultas en situación de vulnerabilidad:</label>
+                    <div class="col-3">
+                        <select class="form-select">
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>Otro tipo de vulnerabilidad:</label>
+                    <div class="col-3">
+                        <select class="form-select">
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group my-2">
+                    <label>Otro tipo de vulnerabilidad ¿Cual?:</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <hr>
+                <label>Observaciones</label>
+                <div class="form-floating my-2">
+                    <textarea class="form-control" placeholder="observacion" id="observacion" rows="3"></textarea>
+                    <label for="observacion">observacion</label>
+                </div>
+                <label>Firma</label>
+                <div class="form-floating my-2">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="firma" rows="3"></textarea>
+                    <label for="firma">firma</label>
+                </div>
+                <div align="right" class="my-5">
+                    <button type="button" class="btn btn-secondary btn-sm" style="margin-right: 20px;">Imprimir ficha</button>
+                    <button type="button" class="btn btn-primary btn-sm" style="margin-right: 20px;">Agregar grupo familiar</button>
+                    <button type="button" class="btn btn-primary btn-sm" >Guardar</button>
+                </div>
+
+
+
+            </div>
+
+
+        </form>
+    </div>
+
+</div>

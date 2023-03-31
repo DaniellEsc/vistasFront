@@ -1,0 +1,16 @@
+.tamaño-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.tamaño-fuente {
+
+    font-size: 12px;
+
+}
+.tamaño-titulo {
+
+    font-size: 13px;
+
+}
